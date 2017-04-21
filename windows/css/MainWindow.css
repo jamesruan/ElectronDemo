@@ -1,0 +1,12 @@
+body {
+	padding: 8px;
+	margin: 0px;
+	-webkit-app-region: drag;
+}
+#mainDropZone {
+	width: 64px;
+	height: 64px;
+	background-color: rgba(255,255,255,0.5);
+	-webkit-app-region: no-drag;
+}
+

@@ -1,0 +1,24 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron --enable-transparent-visuals --disable-gpu ."
+  },
+  "author": "ruanbeihong",
+  "license": "ISC",
+  "jshintConfig": {
+    "esversion": 6,
+    "maxerr": 5,
+    "browser": true,
+    "node": true,
+    "strict": true,
+    "asi": true,
+    "eqnull": true,
+    "unused": "vars",
+    "undef": true,
+    "varstmt": true
+  }
+}
