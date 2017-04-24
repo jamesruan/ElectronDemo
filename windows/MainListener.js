@@ -2,11 +2,24 @@
 const {ipcMain, BrowserWindow} = require('electron')
 
 const init = () => {
-	ipcMain.on('async_main_exit', () => {
-		let windows = BrowserWindow.getAllWindows()
-		windows.forEach((win) => {
-			win.close()
-		})
+	ipcMain.on('async_main', (e, cmd) => {
+		const MainWindow = require('./MainWindow.js')
+		switch (cmd) {
+		case 'exit':
+			let windows = BrowserWindow.getAllWindows()
+			windows.forEach((win) => {
+				win.close()
+			})
+			break
+		case 'expand':
+			MainWindow.expand()
+			break
+		case 'shrink':
+			MainWindow.shrink()
+			break
+		default:
+			console.warn('main window: unknown cmd', cmd)
+		}
 	})
 
 	ipcMain.on('async_task_window', (e, cmd) => {
@@ -20,7 +33,7 @@ const init = () => {
 			TaskWindow.close()
 			break
 		default:
-			console.warn('task window unknown cmd', cmd)
+			console.warn('task window: unknown cmd', cmd)
 		}
 	})
 }

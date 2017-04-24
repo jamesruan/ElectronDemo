@@ -1,21 +1,25 @@
 'use strict'
-const {BrowserWindow} = require('electron')
+const {globalShortcut, BrowserWindow} = require('electron')
 const MainListener = require('./MainListener.js')
 const path = require('path')
 const url = require('url')
 
 const WIDTH = 80
 const HEIGHT = 80
+const LIST_WIDTH = 160
+const LIST_HEIGHT = 320
 const FOCUSABLE = process.platform === 'linux' ? true : false
 
 let win = null
 
 const init = () => {
 	if(win == null) {
+		const {width, height} = require('electron').screen.getPrimaryDisplay().workAreaSize
 		win = new BrowserWindow({
 			width: WIDTH,
 			height: HEIGHT,
-			center: true,
+			x: width - LIST_WIDTH,
+			y: height - LIST_HEIGHT,
 			show: false,
 			frame: false,
 			transparent: true,
@@ -41,6 +45,9 @@ const init = () => {
 		})
 
 		MainListener.init()
+		globalShortcut.register('CommandOrControl+F1', () => {
+			console.log('^F1 pressed')
+		})
 	}
 
 	return win
@@ -55,5 +62,15 @@ module.exports = {
 		if (win != null) {
 			win.close()
 		}
-	}
+	},
+	expand: () => {
+		if (win != null) {
+			win.setSize(LIST_WIDTH, LIST_HEIGHT)
+		}
+	},
+	shrink: () => {
+		if (win != null) {
+			win.setSize(WIDTH, HEIGHT)
+		}
+	},
 }
