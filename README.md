@@ -25,17 +25,17 @@ For further speed up, you can use the offline mirror of yarn:
 ### electron
 For development, you'll need electron installed:
 
-    yarn global install electron
+    yarn global add electron
 
 ### electron-packager
 For release, you'll need electron-packager installed:
 
-    yarn global install electron-packager
+    yarn global add electron-packager
 
 ### jshint
 Also, jshint is a good tool for code quality control.
 
-    yarn global install jshint
+    yarn global add jshint
 
 ### clone the demo
 
