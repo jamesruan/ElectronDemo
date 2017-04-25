@@ -53,7 +53,6 @@ const init = () => {
 	return win
 }
 
-
 module.exports = {
 	create: () => {
 		return init()

@@ -1,25 +1,13 @@
 {
-  "name": "electron-demo",
+  "name": "electron-demo-env",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron --enable-transparent-visuals --disable-gpu ."
+    "start": "electron --enable-transparent-visuals --disable-gpu app",
+    "pack": "electron-packager app demo --out=dist --platform=win32,darwin --asar --arch=x64 --electron-version=1.6.5"
   },
   "author": "ruanbeihong",
   "license": "ISC",
-  "jshintConfig": {
-    "esversion": 6,
-    "maxerr": 5,
-    "browser": true,
-    "node": true,
-    "strict": true,
-    "asi": true,
-    "eqnull": true,
-    "unused": "vars",
-    "undef": true,
-    "varstmt": true
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamesruan/ElectronDemo.git"
@@ -29,7 +17,7 @@
   },
   "homepage": "https://github.com/jamesruan/ElectronDemo#readme",
   "description": "",
-  "dependencies": {
-    "mousetrap": "^1.6.1"
+  "devDependencies": {
+    "electron-packager": "^8.6.0"
   }
 }
