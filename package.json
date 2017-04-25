@@ -16,8 +16,5 @@
     "url": "https://github.com/jamesruan/ElectronDemo/issues"
   },
   "homepage": "https://github.com/jamesruan/ElectronDemo#readme",
-  "description": "",
-  "devDependencies": {
-    "electron-packager": "^8.6.0"
-  }
+  "description": ""
 }

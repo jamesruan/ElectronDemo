@@ -23,7 +23,6 @@ Mousetrap.bind('f12', () => {
 })
 
 const expand = () => {
-	
 	ipcRenderer.send('async_main', 'expand')
 	dropzone.onmouseover = null
 }
